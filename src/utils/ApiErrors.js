@@ -3,7 +3,7 @@ class ApiError extends Error{
         statusCode,
         message = "Something went wrong",
         errors = [],
-        stack = ""
+        stack = "" //contains call history
     )
     {
         super(message)
@@ -17,7 +17,7 @@ class ApiError extends Error{
             this.stack = stack
         }
         else{
-            Error.captureStackTrace(this,this.constructor)
+            Error.captureStackTrace(this,this.constructor)//dynamic text generator that contains file methods lines of code
         }
     }
 }
