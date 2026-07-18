@@ -27,5 +27,9 @@ import userRouter  from "./routes/user.route.js"
 //routedeclaration
 app.use("/api/v1/users",userRouter)
 
+import videoRouter from "./routes/video.route.js"
+
+app.use("/api/v1/videos", videoRouter);
+
 
 export default app

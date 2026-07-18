@@ -28,4 +28,29 @@ const uploadOnCloudinary = async (localFilePath)=>{
        }
 }
 
-export {uploadOnCloudinary}
+//default type image if we forget to specify
+const deleteFromCloudinary = async (url, resourceType = "image") => {
+    try {
+        if (!url) return null;
+
+        const parts = url.split('/');
+        
+        const versionIndex = parts.findIndex(part => part.startsWith('v') && !isNaN(part.substring(1)));
+        
+        const publicIdWithExtension = parts.slice(versionIndex + 1).join('/');
+        
+        const publicId = publicIdWithExtension.substring(0, publicIdWithExtension.lastIndexOf('.'));
+
+        const response = await cloudinary.uploader.destroy(publicId, {
+            resource_type: resourceType 
+        });
+
+        return response;
+
+    } catch (error) {
+        console.error("Cloudinary Deletion Error:", error);
+        return null;
+    }
+}
+
+export {uploadOnCloudinary,deleteFromCloudinary}
