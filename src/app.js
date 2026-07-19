@@ -31,5 +31,13 @@ import videoRouter from "./routes/video.route.js"
 
 app.use("/api/v1/videos", videoRouter);
 
+import subscriptionRoute from "./routes/subscription.route.js"
+
+app.use("/api/v1/subscription",subscriptionRoute)
+
+import playListRoute from "./routes/playlist.route.js"
+
+app.use("/api/v1/playlist",playListRoute)
+
 
 export default app
