@@ -31,13 +31,22 @@ import videoRouter from "./routes/video.route.js"
 
 app.use("/api/v1/videos", videoRouter);
 
-import subscriptionRoute from "./routes/subscription.route.js"
+import subscriptionRouter from "./routes/subscription.route.js"
 
-app.use("/api/v1/subscription",subscriptionRoute)
+app.use("/api/v1/subscription",subscriptionRouter)
 
-import playListRoute from "./routes/playlist.route.js"
+import playListRouter from "./routes/playlist.route.js"
 
-app.use("/api/v1/playlist",playListRoute)
+app.use("/api/v1/playlist",playListRouter)
+
+import tweetRouter from "./routes/tweet.route.js"
+
+app.use("/api/v1/tweet",tweetRouter)
+
+import commentRouter from "./routes/comment.route.js"
+
+app.use("/api/v1/comment",commentRouter)
+
 
 
 export default app
