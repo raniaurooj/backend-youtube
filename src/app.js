@@ -47,6 +47,18 @@ import commentRouter from "./routes/comment.route.js"
 
 app.use("/api/v1/comment",commentRouter)
 
+import likeRouter from "./routes/like.route.js"
+
+app.use("/api/v1/like",likeRouter)
+
+import dashboardRouter from "./routes/dashboard.route.js"
+
+app.use("/api/v1/dashboard",dashboardRouter)
+
+import healthcheckRouter from "./routes/healthcheck.route.js"
+
+app.use("/api/v1/health",healthcheckRouter)
+
 
 
 export default app
